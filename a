@@ -1,0 +1,11 @@
+<?php
+		
+	require_once 'dbconnect.php';
+			
+	$sql = "DELETE FROM Kategorie WHERE ID_K = " . $_GET["id"];
+				
+	$sth = $dbh->prepare($sql);
+	$sth->execute();
+
+	header("location:viewCategory.php");
+?>
