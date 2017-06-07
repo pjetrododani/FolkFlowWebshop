@@ -5,7 +5,7 @@ session_start();
 
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Login Webshop</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -21,7 +21,7 @@ session_start();
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>Online Store</h1>      
+    <h1>Webshop "FolkFlow"</h1>      
     <p>Mission, Vission & Values</p>
   </div>
 </div>
