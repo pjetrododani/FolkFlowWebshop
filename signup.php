@@ -3,7 +3,7 @@
 
 <head>
    
-  <title>Bootstrap Example</title>
+  <title>Webshop </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -68,7 +68,7 @@
 					if(isset($_POST['sub'])) {
 						
 						// DB verbinden
-						require('dbconnect.php');
+						/*require('dbconnect.php');
 						
 						
 						
@@ -99,8 +99,28 @@
 						$sth2->execute();
 						
 						$result = $sth2->fetch(PDO::FETCH_ASSOC);
-						$idU = $result('idU');
-						
+						$idU = $result('idU'); */
+						$db_host = "localhost";
+						$db_user = "root";
+						$db_passwort = "";
+						$db_name = "folkflow";
+						mysql_connect("$db_host","$db_user","$db_passwort") or die
+						("Keine Verbindung moeglich");
+						mysql_select_db("$db_name") or die ("Die Datenbank existiert nicht.");
+						$vorname = $_POST['vname'];
+						$nachname = $_POST['fname'];
+						$email = $_POST['email'];
+						$psw = $_POST['password'];
+						$gebtag = $_POST['gebtag'];
+						$geschl = $_POST['geschlecht'];
+						if(strlen($vorname)>2 && strlen($nachname)>2){
+						$sql = 'INSERT INTO user (vname, fname, email, password, gebtag, geschlecht) VALUES ("'.$vorname.'","'.$nachname.'", "'.$email.'", "'.$psw.'",
+						"'.$gebtag.'","'.$geschl.'")';
+						$eintragen = mysql_query($sql) or die("Fehler: ".mysql_error());
+							 echo 'Der Eintrag war erfolgreich';
+						} else {
+							 echo 'Ihre Angaben sind fehlerhaft.';
+						}
 						
 						
 						// DB schliessen
