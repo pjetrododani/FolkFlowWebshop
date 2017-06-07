@@ -1,3 +1,3 @@
 <footer class="container-fluid text-center">
-  <p>Online Store Copyright</p>  
+  <p>Webshop "FolkFlow"</p>  
 </footer>
